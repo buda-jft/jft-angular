@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MyserviceService} from './myservice.service';
+// import {MyserviceService} from './myservice.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
@@ -20,8 +20,14 @@ export class AppComponent {
         Validators.required,
         Validators.pattern("[^ @]*@[^ @]*")
       ])),
-      passwd: new FormControl(""),
+      passwd: new FormControl("", this.passwordvalidation)
     });
+  }
+  passwordvalidation(formcontrol) {
+    // if this returns true than it will allow the validation
+    if (formcontrol.value.length < 5) {
+      return {"passwd": true};
+    }
   }
   onClickSubmit(data) {
     this.emailid = data.emailid;

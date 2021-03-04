@@ -9,6 +9,7 @@ import { SqrtPipe } from "./app.sqrt";
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { MyserviceService } from './myservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MyserviceService } from './myservice.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

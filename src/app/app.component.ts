@@ -8,14 +8,15 @@ import {MyserviceService} from './myservice.service';
 })
 export class AppComponent {
   title = 'my-first-app';
-  todaydate;
-  componentprop;
+  public persondata = [];
   constructor(private myService: MyserviceService) {}
-  ngOnInit() {
-    this.todaydate = this.myService.showDate();
-    console.log(this.myService.serviceProp);
-    this.myService.serviceProp = "service changed value" // value is changed
-    this.componentprop = this.myService.serviceProp;
+  ngOnInit() {//                |
+    //                   what ? v
+    this.myService.getData().subscribe((data) => {
+      // not clear about this
+      this.persondata = Array.from(Object.keys(data), k=>data[k]);
+      console.log(this.persondata);
+    });
   }
 
 }

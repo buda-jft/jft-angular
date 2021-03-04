@@ -1,5 +1,8 @@
-{{todaydate}}
 <h3>
-    Service Property : {{componentprop}}
+    User Data
 </h3>
-<app-new-cmp></app-new-cmp>
+<ul>
+    <li *ngFor = "let item of persondata; let i = index">
+        {{item.name}}
+    </li>
+</ul>

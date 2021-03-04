@@ -8,6 +8,7 @@ import { ChangeTextDirective } from './change-text.directive';
 import { SqrtPipe } from "./app.sqrt";
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { MyserviceService } from './myservice.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MyserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MyserviceService} from './myservice.service';
 
 @Component({
   selector: 'app-root',
@@ -7,21 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-app';
-  todaydate = new Date();
-  jsonval = {name:'Rox', age:'25', address:{a1:'Mumbai', a2:'Karnataka'}};
-  months = ["January", "February", "March", "April", "May",
-  "June", "July", "August", "September",
-  "October", "November", "December"];
-
-  isavailable = true;
-
-  myClickFunc(event) {
-  //just added console.log which will display the event details in browser on click of the button.
-    alert("Button is clicked");
-    this.isavailable = !this.isavailable;
-    console.log(event);
+  todaydate;
+  componentprop;
+  constructor(private myService: MyserviceService) {}
+  ngOnInit() {
+    this.todaydate = this.myService.showDate();
+    console.log(this.myService.serviceProp);
+    this.myService.serviceProp = "service changed value" // value is changed
+    this.componentprop = this.myService.serviceProp;
   }
-  changemonths(event) {
-    console.log(event);
-  }
+
 }

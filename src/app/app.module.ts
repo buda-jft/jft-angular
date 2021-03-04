@@ -10,7 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
-
+// import { ScrollDispatchModule } from '@angular/cdk/scrolling';
+// import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     SqrtPipe,
@@ -24,7 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    // ScrollDispatchModule,
+    // DragDropModule,
+    FormsModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

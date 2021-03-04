@@ -8,15 +8,12 @@ import {MyserviceService} from './myservice.service';
 })
 export class AppComponent {
   title = 'my-first-app';
-  public persondata = [];
   constructor(private myService: MyserviceService) {}
-  ngOnInit() {//                |
-    //                   what ? v
-    this.myService.getData().subscribe((data) => {
-      // not clear about this
-      this.persondata = Array.from(Object.keys(data), k=>data[k]);
-      console.log(this.persondata);
-    });
+  ngOnInit() {
+  }
+  onClickSubmit(data) {
+    alert("Enter Email id : " + data.emailid);
+    alert("Enter password id : " + data.passwd);
   }
 
 }

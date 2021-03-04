@@ -12,7 +12,7 @@ import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
 // import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 // import { DragDropModule } from '@angular/cdk/drag-drop';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     SqrtPipe,
@@ -29,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     // ScrollDispatchModule,
     // DragDropModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

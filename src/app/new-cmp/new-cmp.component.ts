@@ -12,8 +12,8 @@ export class NewCmpComponent implements OnInit {
   constructor(private myservice: MyserviceService){ }
   ngOnInit() {
     // this is called when the class is executed
-    this.todaydate = this.myservice.showDate();
-    this.newcomponentprop = this.myservice.serviceProp;
+    // this.todaydate = this.myservice.showDate();
+    // this.newcomponentprop = this.myservice.serviceProp;
   }
 
 }

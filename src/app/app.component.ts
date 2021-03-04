@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MyserviceService} from './myservice.service';
-
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,12 +8,17 @@ import {MyserviceService} from './myservice.service';
 })
 export class AppComponent {
   title = 'my-first-app';
+  emailid;
+  formdata;
   constructor(private myService: MyserviceService) {}
   ngOnInit() {
+    this.formdata = new FormGroup({
+      emailid: new FormControl("angular@gmail.com"),
+      passwd: new FormControl("ancdpass1314"),
+    });
   }
   onClickSubmit(data) {
-    alert("Enter Email id : " + data.emailid);
-    alert("Enter password id : " + data.passwd);
+    this.emailid = data.emailid;
   }
 
 }

@@ -17,6 +17,7 @@ export class AppComponent {
   myClickFunc(event) {
   //just added console.log which will display the event details in browser on click of the button.
     alert("Button is clicked");
+    this.isavailable = !this.isavailable;
     console.log(event);
   }
   changemonths(event) {

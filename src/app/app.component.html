@@ -4,7 +4,8 @@
         <br />
         <input type="password" class="fortextbox" name="passwd" placeholder="passwd" formControlName="passwd">
         <br />
-    <input type="submit" class="forsubmit" value="Log In">
+        <!-- user cannot submit if form data is not valid -->
+    <input type="submit" [disabled] = "!formdata.valid" class="forsubmit" value="Log In">
     </form>
 </div>
 <p>

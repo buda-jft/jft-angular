@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {MyserviceService} from './myservice.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,13 +8,19 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class AppComponent {
   title = 'my-first-app';
+  todaydate;
+  componentprop;
   emailid;
   formdata;
-  constructor(private myService: MyserviceService) {}
+  // constructor(private myService: MyserviceService) {}
   ngOnInit() {
     this.formdata = new FormGroup({
-      emailid: new FormControl("angular@gmail.com"),
-      passwd: new FormControl("ancdpass1314"),
+      // compose can add list of methods
+      emailid: new FormControl("", Validators.compose([
+        Validators.required,
+        Validators.pattern("[^ @]*@[^ @]*")
+      ])),
+      passwd: new FormControl(""),
     });
   }
   onClickSubmit(data) {

@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class MyserviceService {
   private finaldata = [];
-  private apiurl = "http://jsonplaceholder.typicode.com/photos";
+  // private apiurl = "http://jsonplaceholder.typicode.com/photos";
+  private apiurl = "http://jsonplaceholder.typicode.com/users";
   // what does this actually do, what if I want more modules
   constructor(private http : HttpClient) {}
   getData() {

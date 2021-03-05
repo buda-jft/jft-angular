@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 // import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
@@ -29,10 +30,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // ScrollDispatchModule,
-    // DragDropModule,
     ReactiveFormsModule,
-    ScrollingModule
+    ScrollingModule,
+    DragDropModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
-import { MyserviceService } from "./myservice.service";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from "@angular/animations";
+// import { MyserviceService } from "./myservice.service";
+// import { FormGroup, FormControl, Validators } from "@angular/forms";
+// import {
+//   trigger,
+//   state,
+//   style,
+//   transition,
+//   animate,
+// } from "@angular/animations";
 // import {CdkDragDrop, moveItemInArray, transferArrayItem} from
 // '@angular/cdk/drag-drop';
 @Component({
@@ -47,8 +47,9 @@ import {
   // ],
 })
 export class AppComponent {
-  state: string = "smaller";
-  animate() {
-    this.state = this.state == 'larger' ? 'smaller' : 'larger';
-  }
+  constructors() {}
+  // state: string = "smaller";
+  // animate() {
+  //   this.state = this.state == 'larger' ? 'smaller' : 'larger';
+  // }
 }

@@ -10,11 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
-// import { ScrollDispatchModule } from '@angular/cdk/scrolling';
-// import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
@@ -32,7 +31,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     HttpClientModule,
     ReactiveFormsModule,
     ScrollingModule,
-    DragDropModule
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

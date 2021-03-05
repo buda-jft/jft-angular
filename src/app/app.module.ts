@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatMenuModule, MatSidenavModule } from '@angular/material';
 // import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     ScrollingModule,
     DragDropModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatSidenavModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

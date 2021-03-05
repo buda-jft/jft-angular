@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import {MyserviceService} from './myservice.service';
+import {MyserviceService} from './myservice.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-root',
@@ -8,29 +8,12 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent {
   title = 'my-first-app';
-  todaydate;
-  componentprop;
-  emailid;
-  formdata;
-  // constructor(private myService: MyserviceService) {}
+  public albumdetails = [];
+  constructor(private myService: MyserviceService) {}
   ngOnInit() {
-    this.formdata = new FormGroup({
-      // compose can add list of methods
-      emailid: new FormControl("", Validators.compose([
-        Validators.required,
-        Validators.pattern("[^ @]*@[^ @]*")
-      ])),
-      passwd: new FormControl("", this.passwordvalidation)
-    });
+    this.myService.getData().subscribe((data) => {
+      this.albumdetails = Array.from(Object.keys(data), k=>data[k]);
+      console.log(this.albumdetails);
+    })
   }
-  passwordvalidation(formcontrol) {
-    // if this returns true than it will allow the validation
-    if (formcontrol.value.length < 5) {
-      return {"passwd": true};
-    }
-  }
-  onClickSubmit(data) {
-    this.emailid = data.emailid;
-  }
-
 }

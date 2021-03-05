@@ -1,13 +1,18 @@
-<div>
-    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
-        <input type="text" class="fortextbox" name="emailid" placeholder="emailid" formControlName="emailid">
-        <br />
-        <input type="password" class="fortextbox" name="passwd" placeholder="passwd" formControlName="passwd">
-        <br />
-        <!-- user cannot submit if form data is not valid -->
-    <input type="submit" [disabled] = "!formdata.valid" class="forsubmit" value="Log In">
-    </form>
-</div>
-<p>
-    Email entered is : {{emailid}}
-</p>
+<h3>Angular 7 - Virtual Scrolling</h3>
+<!-- syntax -->
+<cdk-virtual-scroll-viewport [itemSize]="20">
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>ThumbNail</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *cdkVirtualFor="let album of albumdetails">
+                <td>{{album.id}}</td>
+                <td><img src="{{album.thumbnailUrl}}" width="100" height="100" /></td>
+            </tr>
+        </tbody>
+    </table>
+</cdk-virtual-scroll-viewport>

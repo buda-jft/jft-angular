@@ -36,3 +36,11 @@ display: inline-block;
 border: 1px solid #B3A9A9;
 box-sizing: border-box;
 }
+
+table {
+width: 100%;
+}
+/* unless this height is specified, won't show */
+cdk-virtual-scroll-viewport {
+height: 500px;
+}

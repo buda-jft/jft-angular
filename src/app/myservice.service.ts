@@ -4,14 +4,9 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class MyserviceService {
-  // serviceProp = "service created";
-  // constructor() { }
-  // showDate() {
-  //   let today = new Date();
-  //   return today;
-  // }
   private finaldata = [];
-  private apiurl = "http://jsonplaceholder.typicode.com/users";
+  private apiurl = "http://jsonplaceholder.typicode.com/photos";
+  // what does this actually do, what if I want more modules
   constructor(private http : HttpClient) {}
   getData() {
     return this.http.get(this.apiurl);
